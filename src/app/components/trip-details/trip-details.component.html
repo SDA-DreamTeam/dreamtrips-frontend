@@ -1,0 +1,128 @@
+<div class="dark-glass">
+    <div class="row">
+        <div class="col picture-center"><img src="{{trip.picture}}" alt=""></div>
+    </div>
+
+    <!-- <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2">From</div>
+        <div class="col-sm-4">{{trip.fromAirport}}</div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2">To</div>
+        <div class="col-sm-4">{{trip.toAirport}}</div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2">Hotel</div>
+        <div class="col-sm-4">{{ trip.hotel }}</div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2">Departure Date</div>
+        <div class="col-sm-4">{{trip.departureDate }}</div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2">Numbre of Days</div>
+        <div class="col-sm-4">{{ trip.numberOfDays }}</div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2">Board Basis</div>
+        <div class="col-sm-4">{{ trip.boardBasis }}</div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2">Price for adults</div>
+        <div class="col-sm-4">{{ trip.priceAdult }}</div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2">Price for children</div>
+        <div class="col-sm-4">{{ trip.priceChild }}</div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2">Number of Beds (Adults)</div>
+        <div class="col-sm-4">{{ trip.numberOfBedsAdult }}</div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-2">Number of Beds (Children)</div>
+        <div class="col-sm-4">{{ trip.numberOfBedsChild }}</div>
+        <div class="col-sm-2"></div>
+    </div> -->
+
+    <br>
+    <h4 class="header">About your trip</h4>
+    <hr>
+
+    <!-- Main division col-col-component -->
+    <div class="row">
+        <div class="col-sm-8">
+
+            <!-- Here put trip info -->
+            <div class="row">
+                <div class="col-sm-3 column-fix">Destination:</div>
+                <div class="col-sm-9">{{trip.toCountry}}, {{trip.toCity}} ({{trip.toAirport}})</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 column-fix">From:</div>
+                <div class="col-sm-9">{{trip.fromCountry}}, {{trip.fromCity}} ({{trip.fromAirport}})</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 column-fix">Hotel:</div>
+                <div class="col-sm-9">{{ trip.hotel }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 column-fix">Departure Date:</div>
+                <div class="col-sm-9">{{trip.departureDate }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 column-fix">Number of Days:</div>
+                <div class="col-sm-9">{{ trip.numberOfDays }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 column-fix">Board Basis:</div>
+                <div class="col-sm-9">{{ trip.boardBasis }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 column-fix">Price for adults:</div>
+                <div class="col-sm-9">{{ trip.priceAdult }} eur</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 column-fix">Price for children:</div>
+                <div class="col-sm-9">{{ trip.priceChild }} eur</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 column-fix">Number of Beds (Adults)</div>
+                <div class="col-sm-9">{{ trip.numberOfBedsAdult }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 column-fix">Number of Beds (Children)</div>
+                <div class="col-sm-9">{{ trip.numberOfBedsChild }}</div>
+            </div>
+            <!-- End of the trip info section -->
+        </div>
+
+        <!-- Here is a placeholder for Purchase Form -->
+        <div class="col-sm-4">purchase-form</div>
+    </div>
+
+
+
+
+
+
+</div>

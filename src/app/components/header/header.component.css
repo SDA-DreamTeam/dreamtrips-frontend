@@ -1,0 +1,57 @@
+span:hover {
+    transition-duration: 0.5s;
+    color: rgba(167, 39, 39, 0.795);
+    font-weight: bolder;
+}
+
+h1,h2,h3,h4,h5,h6,a,p,link,span {
+    color: white;
+}
+
+
+.active {
+    color: rgb(139, 35, 35);
+    
+}
+
+.logo {
+    margin-right:30px;
+    font-size: 30px;
+}
+
+.nav-fix {
+    margin-top: 5px;
+    margin-right: 0px;
+    margin-left: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.btn-custom {
+    background-color: rgb(139, 35, 35);
+    color: white;
+}
+
+input {
+    margin-left: 50px;
+    margin-top: 10px;
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+    width: 200px;
+  }
+
+  button {
+    margin-top: 10px;  
+  }
+
+  #right
+{
+    position:absolute;
+    right:0px;
+}
+
+.pull-right {
+    flex: right;
+}
+

@@ -1,0 +1,29 @@
+h1,h2,h3,h4,h5,h6,a,p,div{
+    color: white;
+}
+
+.dark-glass {
+    background-color: #14151ba2;
+    color: white;
+    
+}
+
+.picture-center {
+    text-align: center;
+}
+
+.header {
+    font-size: 25px;
+    padding-left: 60px;
+}
+
+.text-set {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.column-fix {
+padding-left: 30px;
+}

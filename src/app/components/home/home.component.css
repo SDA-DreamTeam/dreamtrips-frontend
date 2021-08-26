@@ -1,0 +1,25 @@
+h1,h2,h3,h4,h5,h6,a,p,span {
+  color: white;
+  
+}
+
+.tagline {
+  font-size: 90px;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.btn-custom {
+    background-color: rgba(139, 35, 35, 0.308);
+    color: white;
+}
+
+button:hover {
+  transition-duration: 0.7s;
+  background-color: rgb(139, 35, 35);
+}
