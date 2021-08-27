@@ -29,7 +29,7 @@ import { PurchaseFormComponent } from './components/purchase-form/purchase-form.
     AddTripComponent,
     EditTripComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
     PurchaseFormComponent
   ],
   imports: [
