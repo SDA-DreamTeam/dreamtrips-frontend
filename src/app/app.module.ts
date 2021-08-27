@@ -16,6 +16,7 @@ import { EditTripComponent } from './components/edit-trip/edit-trip.component';
 import { AuthModule } from './auth/auth/auth.module';
 import { LoginComponent } from './auth/components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SignupComponent } from './components/signup/signup.component';
     EditTripComponent,
     LoginComponent,
     SignupComponent
+    PurchaseFormComponent
   ],
   imports: [
     BrowserModule,

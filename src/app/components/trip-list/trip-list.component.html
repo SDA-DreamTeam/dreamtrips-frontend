@@ -10,6 +10,7 @@
                 <h4 class="card-title">{{this.trip.fromAirport}}</h4>
                 <p class="card-text">{{this.trip.departureDate}}</p>
                 <a href="#" class="btn btn-custom btn-sm" [routerLink]="['/trip-details']" [queryParams]="{id:this.trip.id}">See Details</a>
+                <button class="btn btn-delete button-fix btn-sm btn-mrg" [routerLink]="['/delete-trip']">Delete trip*</button>
             </div>
         </div>
     </div>

@@ -4,8 +4,6 @@
     <li class="nav-item active">
       <a class="nav-link" href="#">
         <h3 class="logo">DreamTrips</h3>
-        <!-- <img src="https://scontent.ftll1-1.fna.fbcdn.net/v/t1.15752-9/240390766_251459106833492_5389402836402111945_n.png?_nc_cat=109&ccb=1-5&_nc_sid=ae9488&_nc_ohc=KaP74dc-llQAX_wDuNE&_nc_ht=scontent.ftll1-1.fna&oh=35cbf881f14e9446d654f5d79dec2efc&oe=614B07D4" 
-        style="height: 60px;"> -->
       </a>
     </li>
     <li class="nav-item nav-fix">
@@ -16,6 +14,8 @@
     </li>
     <li *ngIf="isCustomer" class="nav-item nav-fix">
       <a class="nav-link" [routerLink]="['/bookings']"><span>Bookings</span></a>
+    <li class="nav-item nav-fix">
+      <a class="nav-link" [routerLink]="['/add-trip']"><span>Add a trip*</span></a>
     </li>
     <!-- Activated link -->
     <!-- <li class="nav-item nav-fix">

@@ -36,7 +36,7 @@ const routes: Routes = [
     component: AddTripComponent
   },
   {
-    path: 'edit-trip/:id',
+    path: 'edit-trip',
     component: EditTripComponent
   },
   {path: 'login', component: LoginComponent},
