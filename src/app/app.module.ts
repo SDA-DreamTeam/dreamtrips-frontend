@@ -13,6 +13,9 @@ import { TripListComponent } from './components/trip-list/trip-list.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 import { AddTripComponent } from './components/add-trip/add-trip.component';
 import { EditTripComponent } from './components/edit-trip/edit-trip.component';
+import { AuthModule } from './auth/auth/auth.module';
+import { LoginComponent } from './auth/components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,17 @@ import { EditTripComponent } from './components/edit-trip/edit-trip.component';
     TripListComponent,
     TripDetailsComponent,
     AddTripComponent,
-    EditTripComponent
+    EditTripComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
