@@ -1,0 +1,56 @@
+.dark-glass {
+    background-color: #14151ba2;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.493);
+    border-top-width: 0px;
+}
+
+.box{
+    height: 150px;
+    width: auto;
+}
+
+h1,h2,h3,h4,h6,a,p,div{
+    color: rgba(255, 255, 255, 0.815);
+}
+
+h5 {
+    color: rgba(255, 255, 255, 0.767);
+}
+
+.mrg {
+    padding-top: 20px;
+    padding-inline-end: 20px;
+    padding-left: 10px; 
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.form-fix {
+    margin: 10px;
+}
+
+.input-fix {
+width: 200px;
+}
+
+select:invalid { color: gray; }
+
+div.inline { display: inline-block;}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-custom {
+    background-color: rgb(139, 35, 35);
+    color: white;
+}
+
+.input-fix {
+    background-color: rgba(209, 209, 209, 0.596);
+    border-width: 1.5px;
+}

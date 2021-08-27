@@ -14,6 +14,8 @@ import { TripDetailsComponent } from './components/trip-details/trip-details.com
 import { AddTripComponent } from './components/add-trip/add-trip.component';
 import { EditTripComponent } from './components/edit-trip/edit-trip.component';
 import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
+import { AdvancedSearchComponent } from './components/advanced-search/advanced-search.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { PurchaseFormComponent } from './components/purchase-form/purchase-form.
     TripDetailsComponent,
     AddTripComponent,
     EditTripComponent,
-    PurchaseFormComponent
+    PurchaseFormComponent,
+    AdvancedSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@ h1,h2,h3,h4,h5,h6,a,p,link,span {
 }
 
 .nav-fix {
-    margin-top: 5px;
+    margin-top: 0px;
     margin-right: 0px;
     margin-left: 15px;
     font-family: 'Roboto', sans-serif;
@@ -38,7 +38,7 @@ input {
     clear: both;
     float: left;
     margin-bottom: 10px;
-    width: 200px;
+    width: 250px;
   }
 
   button {
@@ -55,3 +55,7 @@ input {
     flex: right;
 }
 
+.input-fix {
+    background-color: rgba(209, 209, 209, 0.596);
+    border-width: 1.5px;
+}
