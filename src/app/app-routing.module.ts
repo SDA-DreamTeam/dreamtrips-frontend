@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './auth/components/login/login.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { AddTripComponent } from './components/add-trip/add-trip.component';
 import { EditTripComponent } from './components/edit-trip/edit-trip.component';
 import { HomeComponent } from './components/home/home.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 import { TripListComponent } from './components/trip-list/trip-list.component';
 
@@ -36,7 +38,10 @@ const routes: Routes = [
   {
     path: 'edit-trip',
     component: EditTripComponent
-  }
+  },
+  {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent}
+
 ];
 
 @NgModule({

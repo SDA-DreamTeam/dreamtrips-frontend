@@ -13,6 +13,9 @@ import { TripListComponent } from './components/trip-list/trip-list.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 import { AddTripComponent } from './components/add-trip/add-trip.component';
 import { EditTripComponent } from './components/edit-trip/edit-trip.component';
+import { AuthModule } from './auth/auth/auth.module';
+import { LoginComponent } from './auth/components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 import { AdvancedSearchComponent } from './components/advanced-search/advanced-search.component';
 
@@ -28,14 +31,18 @@ import { AdvancedSearchComponent } from './components/advanced-search/advanced-s
     AddTripComponent,
     EditTripComponent,
     PurchaseFormComponent,
-    AdvancedSearchComponent
+    AdvancedSearchComponent,
+    LoginComponent,
+    SignupComponent,
+    PurchaseFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
