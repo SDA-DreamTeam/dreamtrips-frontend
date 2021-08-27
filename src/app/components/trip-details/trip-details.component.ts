@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Trip } from 'src/app/model/trip.model';
+import { TripServiceService } from 'src/app/trip-service.service';
+
 
 @Component({
   selector: 'app-trip-details',
@@ -9,25 +12,36 @@ import { Trip } from 'src/app/model/trip.model';
 export class TripDetailsComponent implements OnInit {
 
   trip: Trip;
-  constructor() { }
+  id: number;
+
+  constructor(private route: ActivatedRoute, private tripService: TripServiceService) { }
 
   ngOnInit(){
+    this.route.queryParams
+      .subscribe(params => {
+        this.id = params.id;
+        this.tripService.getTrip(this.id).subscribe(data => {
+          this.trip = new Trip();
+          this.trip.id = data.id;
+          this.trip.fromCity = data.fromAirport.city.name;
+          this.trip.fromCountry = data.fromAirport.city.country.name;
+          this.trip.fromAirport = data.fromAirport.name;
+          this.trip.toAirport = data.toAirport.name;
+          this.trip.toCity = data.toAirport.city.name;
+          this.trip.toCountry = data.toAirport.city.country.name;
+          this.trip.hotel = data.hotel.name;
+          this.trip.departureDate = data.departureDate;
+          this.trip.numberOfDays = data.numberOfDays;
+          this.trip.boardBasis = data.type; 
+          this.trip.priceAdult = data.priceAdult;
+          this.trip.priceChild = data.priceChild;
+          this.trip.numberOfBedsAdult = data.numberOfBedsAdult;
+          this.trip.numberOfBedsChild = data.numberOfBedsChild;
+          this.trip.picture = 'https://picsum.photos/900/300';
+        });
+      }
+    );
     this.trip = new Trip();
-    this.trip.id = 1;
-    this.trip.fromCity = "Tallinn";
-    this.trip.fromCountry = "Estonia";
-    this.trip.fromAirport = "TLL";
-    this.trip.toCity = "Tenerife";
-    this.trip.toCountry = "Spain";
-    this.trip.toAirport = "TFS";
-    this.trip.hotel = "The Bay Club";
-    this.trip.departureDate = "2021-09-11";
-    this.trip.numberOfDays = 10;
-    this.trip.boardBasis = "TT"; 
-    this.trip.priceAdult = 399;
-    this.trip.priceChild = 199;
-    this.trip.numberOfBedsAdult = 2;
-    this.trip.numberOfBedsChild = 1;
     this.trip.picture = 'https://picsum.photos/900/300';
   }
 

@@ -3,35 +3,13 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-4">
+    <div *ngFor="let trip of trips" class="col-sm-4">
         <div id="card" class="card dark-mode extra-border animate__animated animate__fadeIn">
-            <img class="card-img-top" src="https://picsum.photos/500" alt="Card image" style="width:100%">
+            <img class="card-img-top" src="https://picsum.photos/5{{this.trip.id}}" alt="Card image" style="width:100%">
             <div class="card-body">
-                <h4 class="card-title">Berlin, Germany</h4>
-                <p class="card-text">dd/mm/yyyy</p>
-                <a href="#" class="btn btn-custom btn-sm" [routerLink]="['/trip-details']">See Details</a>
-                <button class="btn btn-delete button-fix btn-sm btn-mrg" [routerLink]="['/delete-trip']">Delete trip*</button>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-4" style="padding-bottom: 30px;">
-        <div id="card" class="card dark-mode extra-border animate__animated animate__fadeIn">
-            <img class="card-img-top" src="https://picsum.photos/501" alt="Card image" style="width:100%">
-            <div class="card-body">
-                <h4 class="card-title">Seoul, South Korea</h4>
-                <p class="card-text">dd/mm/yyyy</p>
-                <a href="#" class="btn btn-custom btn-sm">See Details</a>
-                <button class="btn btn-delete button-fix btn-sm btn-mrg" [routerLink]="['/delete-trip']">Delete trip*</button>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div id="card" class="card dark-mode extra-border animate__animated animate__fadeIn">
-            <img class="card-img-top" src="https://picsum.photos/502" alt="Card image" style="width:100%">
-            <div class="card-body">
-                <h4 class="card-title">Nagoya, Japan</h4>
-                <p class="card-text">dd/mm/yyyy</p>
-                <a href="#" class="btn btn-custom btn-sm">See Details</a>
+                <h4 class="card-title">{{this.trip.fromAirport}}</h4>
+                <p class="card-text">{{this.trip.departureDate}}</p>
+                <a href="#" class="btn btn-custom btn-sm" [routerLink]="['/trip-details']" [queryParams]="{id:this.trip.id}">See Details</a>
                 <button class="btn btn-delete button-fix btn-sm btn-mrg" [routerLink]="['/delete-trip']">Delete trip*</button>
             </div>
         </div>

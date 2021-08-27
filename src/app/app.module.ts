@@ -13,6 +13,9 @@ import { TripListComponent } from './components/trip-list/trip-list.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 import { AddTripComponent } from './components/add-trip/add-trip.component';
 import { EditTripComponent } from './components/edit-trip/edit-trip.component';
+import { AuthModule } from './auth/auth/auth.module';
+import { LoginComponent } from './auth/components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 
 @NgModule({
@@ -25,6 +28,8 @@ import { PurchaseFormComponent } from './components/purchase-form/purchase-form.
     TripDetailsComponent,
     AddTripComponent,
     EditTripComponent,
+    LoginComponent,
+    SignupComponent,
     PurchaseFormComponent
   ],
   imports: [
@@ -32,7 +37,8 @@ import { PurchaseFormComponent } from './components/purchase-form/purchase-form.
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

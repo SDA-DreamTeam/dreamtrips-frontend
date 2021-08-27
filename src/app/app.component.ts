@@ -13,5 +13,9 @@ export class AppComponent {
 
   title = 'dream-trips-ui';
 
+  constructor(
+  ) {
+  }
+
 }
 
