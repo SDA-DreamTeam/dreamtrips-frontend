@@ -50,3 +50,15 @@ img {
     width: fit-content;
 }
 
+.btn-delete {
+    font-weight:500;
+    background-color: #14151b;
+    color: rgb(165, 41, 41);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(139, 35, 35);
+}
+
+.btn-mrg {
+    margin-left: 10px;
+}

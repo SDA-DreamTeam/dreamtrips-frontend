@@ -13,6 +13,7 @@ import { TripListComponent } from './components/trip-list/trip-list.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 import { AddTripComponent } from './components/add-trip/add-trip.component';
 import { EditTripComponent } from './components/edit-trip/edit-trip.component';
+import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EditTripComponent } from './components/edit-trip/edit-trip.component';
     TripListComponent,
     TripDetailsComponent,
     AddTripComponent,
-    EditTripComponent
+    EditTripComponent,
+    PurchaseFormComponent
   ],
   imports: [
     BrowserModule,

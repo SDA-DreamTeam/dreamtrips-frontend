@@ -74,50 +74,60 @@
 
             <!-- Here put trip info -->
             <div class="row">
-                <div class="col-sm-3 column-fix">Destination:</div>
-                <div class="col-sm-9">{{trip.toCountry}}, {{trip.toCity}} ({{trip.toAirport}})</div>
+                <div class="col-sm-4 column-fix">Destination:</div>
+                <div class="col-sm-8">{{trip.toCountry}}, {{trip.toCity}} ({{trip.toAirport}})</div>
             </div>
             <div class="row">
-                <div class="col-sm-3 column-fix">From:</div>
-                <div class="col-sm-9">{{trip.fromCountry}}, {{trip.fromCity}} ({{trip.fromAirport}})</div>
+                <div class="col-sm-4 column-fix">From:</div>
+                <div class="col-sm-8">{{trip.fromCountry}}, {{trip.fromCity}} ({{trip.fromAirport}})</div>
             </div>
             <div class="row">
-                <div class="col-sm-3 column-fix">Hotel:</div>
-                <div class="col-sm-9">{{ trip.hotel }}</div>
+                <div class="col-sm-4 column-fix">Hotel:</div>
+                <div class="col-sm-8">{{ trip.hotel }}</div>
             </div>
             <div class="row">
-                <div class="col-sm-3 column-fix">Departure Date:</div>
-                <div class="col-sm-9">{{trip.departureDate }}</div>
+                <div class="col-sm-4 column-fix">Departure Date:</div>
+                <div class="col-sm-8">{{trip.departureDate }}</div>
             </div>
             <div class="row">
-                <div class="col-sm-3 column-fix">Number of Days:</div>
-                <div class="col-sm-9">{{ trip.numberOfDays }}</div>
+                <div class="col-sm-4 column-fix">Number of Days:</div>
+                <div class="col-sm-8">{{ trip.numberOfDays }}</div>
             </div>
             <div class="row">
-                <div class="col-sm-3 column-fix">Board Basis:</div>
-                <div class="col-sm-9">{{ trip.boardBasis }}</div>
+                <div class="col-sm-4 column-fix">Board Basis:</div>
+                <div class="col-sm-8">{{ trip.boardBasis }}</div>
             </div>
             <div class="row">
-                <div class="col-sm-3 column-fix">Price for adults:</div>
-                <div class="col-sm-9">{{ trip.priceAdult }} eur</div>
+                <div class="col-sm-4 column-fix">Price for adults:</div>
+                <div class="col-sm-8">{{ trip.priceAdult }} eur</div>
             </div>
             <div class="row">
-                <div class="col-sm-3 column-fix">Price for children:</div>
-                <div class="col-sm-9">{{ trip.priceChild }} eur</div>
+                <div class="col-sm-4 column-fix">Price for children:</div>
+                <div class="col-sm-8">{{ trip.priceChild }} eur</div>
             </div>
             <div class="row">
-                <div class="col-sm-3 column-fix">Number of Beds (Adults)</div>
-                <div class="col-sm-9">{{ trip.numberOfBedsAdult }}</div>
+                <div class="col-sm-4 column-fix">Number of Beds (Adults)</div>
+                <div class="col-sm-8">{{ trip.numberOfBedsAdult }}</div>
             </div>
             <div class="row">
-                <div class="col-sm-3 column-fix">Number of Beds (Children)</div>
-                <div class="col-sm-9">{{ trip.numberOfBedsChild }}</div>
+                <div class="col-sm-4 column-fix">Number of Beds (Children)</div>
+                <div class="col-sm-8">{{ trip.numberOfBedsChild }}</div>
             </div>
+            <hr>
             <!-- End of the trip info section -->
+
+            <!-- Edit trip Button -->
+            <br>
+            <div class="column-fix">
+                <button class="btn btn-custom" [routerLink]="['/edit-trip']">Edit trip*</button>
+                <button class="btn btn-delete button-fix" [routerLink]="['/delete-trip']">Delete trip*</button>
+            </div>
+            <br><br>
+                
         </div>
 
         <!-- Here is a placeholder for Purchase Form -->
-        <div class="col-sm-4">purchase-form</div>
+        <div class="col-sm-4"><app-purchase-form></app-purchase-form></div>
     </div>
 
 
