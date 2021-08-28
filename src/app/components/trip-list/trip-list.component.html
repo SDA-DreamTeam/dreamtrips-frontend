@@ -1,5 +1,5 @@
 <div>
-    <app-advanced-search></app-advanced-search>
+    <app-advanced-search (tripSearchEvent)="onTripSearch($event)"></app-advanced-search>
 </div>
 
 <div>
@@ -13,7 +13,7 @@
 
     <div *ngFor="let trip of trips" class="col-sm-4" style="height: 490px;">
         <div id="card" class="card dark-mode extra-border animate__animated animate__fadeIn">
-            <img class="card-img-top" src="https://picsum.photos/30{{this.trip.id}}" alt="Card image" style="width:100%" [routerLink]="['/trip-details']" [queryParams]="{id:this.trip.id}">
+            <img class="card-img-top" src="https://picsum.photos/100{{this.trip.id}}" alt="Card image" style="width:100%">
             <div class="card-body">
                 <h4 class="card-title">{{this.trip.toCity}}, {{this.trip.toCountry}}</h4>
                 <p class="card-text">{{this.trip.departureDate | date}} ({{this.trip.departureDate | datePipe}} left)</p>

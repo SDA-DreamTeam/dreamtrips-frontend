@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Trip } from 'src/app/model/trip.model';
-import { Injectable } from '@angular/core';
 import { TripServiceService } from 'src/app/trip-service.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 
@@ -20,19 +18,25 @@ export class TripListComponent implements OnInit {
   isCustomer: boolean = false
   isAdmin: boolean = false
 
-  constructor(private router: Router, private tripService: TripServiceService, private auth: AuthService) {
+  constructor(
+    private router: Router,
+    private tripService: TripServiceService,
+    private route: ActivatedRoute, 
+    private auth: AuthService)
+     {
+    this.isLogin = this.isUserLogin();
+    this.isCustomer = this.isUserCustomer();
+    this.isAdmin = this.isUserAdmin();
+    this.auth.getLoggedInName.subscribe(name => {
       this.isLogin = this.isUserLogin();
       this.isCustomer = this.isUserCustomer();
-      this.isAdmin= this.isUserAdmin();
-      this.auth.getLoggedInName.subscribe(name => {
-        this.isLogin = this.isUserLogin();
-        this.isCustomer = this.isUserCustomer();
-        this.isAdmin= this.isUserAdmin();
-      });
-    } 
+      this.isAdmin = this.isUserAdmin();
+    });
+  }
+
 
   ngOnInit(): void {
-    this.getSuggestionTrips();
+    this.findTrips();
   }
 
   getSuggestionTrips() {
@@ -51,31 +55,54 @@ export class TripListComponent implements OnInit {
   }
 
   isUserLogin() {
-  if (this.auth.getUserDetails() != null) {
-    return true;
-  }
-  return false;
-}
-
-isUserCustomer() {
-  if (this.auth.getUserDetails() == null) {
+    if (this.auth.getUserDetails() != null) {
+      return true;
+    }
     return false;
   }
-  if (this.auth.getUserDetails()['role'] == 'CUSTOMER') {
-    return true;
-  }
-  return false;
-}
 
-isUserAdmin(){
-  if (this.auth.getUserDetails() == null) {
+  isUserCustomer() {
+    if (this.auth.getUserDetails() == null) {
+      return false;
+    }
+    if (this.auth.getUserDetails()['role'] == 'CUSTOMER') {
+      return true;
+    }
     return false;
   }
-  if (this.auth.getUserDetails()['role'] == 'ADMIN') {
-    return true;
+
+  isUserAdmin() {
+    if (this.auth.getUserDetails() == null) {
+      return false;
+    }
+    if (this.auth.getUserDetails()['role'] == 'ADMIN') {
+      return true;
+    }
+    return false;
   }
-  return false;
-}
+
+
+  findTrips() {
+    this.route.queryParams
+      .subscribe(params => {
+        this.tripService.findTrips(params['fromCountry'], params['toCountry'], params['departureDate']).subscribe((res: any) => {
+          this.trips = []
+          res.content.forEach((element) => {
+            this.trips.push({ id: element.id, fromAirport: element.fromAirport.name, departureDate: element.departureDate })
+          });
+        }, err => {
+          console.log(err);
+        });
+      });
+  }
+
+  onTripSearch(data) {
+    this.router.navigate(['/trip-list'], {
+      relativeTo: this.route,
+      queryParams: data,
+      queryParamsHandling: 'merge'
+    });
+  }
 
 
 }

@@ -11,11 +11,12 @@ import { Country } from '../model/country.model';
 export class CountryService {
 
   countries = '/country/all';
+  private url = 'http://localhost:8080/countries';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  //getAllCountries(): Observable<Country[]> {
-    //return this.httpClient.get<Country[]>(environment.resourceUrl + this.countries);
- // }
+  getAllCountries(): Observable<Country[]> {
+    return this.httpClient.get<Country[]>(this.url);
+  }
 }
