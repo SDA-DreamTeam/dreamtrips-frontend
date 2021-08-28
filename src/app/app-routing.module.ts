@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/components/login/login.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { AddCountryComponent } from './components/add-country/add-country.component';
 import { AddTripComponent } from './components/add-trip/add-trip.component';
 import { EditTripComponent } from './components/edit-trip/edit-trip.component';
 import { HomeComponent } from './components/home/home.component';
@@ -40,7 +41,8 @@ const routes: Routes = [
     component: EditTripComponent
   },
   {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent}
+  {path: 'signup', component: SignupComponent},
+  {path: 'add-country', component: AddCountryComponent}
 
 ];
 

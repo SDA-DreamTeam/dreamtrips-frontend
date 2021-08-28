@@ -22,6 +22,9 @@
     <li *ngIf="isAdmin"class="nav-item nav-fix">
       <a class="nav-link" [routerLink]="['/add-trip']"><span>Add a trip*</span></a>
     </li>
+    <li *ngIf="isAdmin"class="nav-item nav-fix">
+      <a class="nav-link" [routerLink]="['/add-country']"><span>Add country</span></a>
+    </li>
     <!-- Activated link -->
     <!-- <li class="nav-item nav-fix">
       <a class="nav-link" [routerLink]="['/trip-list']"><span class="active"><b>Trips</b></span></a>

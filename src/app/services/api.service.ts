@@ -30,8 +30,26 @@ export class ApiService {
   }
 
   postTypeRequest(url, payload) {
+    let headers = new HttpHeaders();
+    let token = this.auth.getToken();
+    if (token) {
+      headers = headers.append('Authorization', `Bearer ${token}`);
+    }
     
-    return this.http.post(`${this.baseUrl}${url}`, payload).pipe(map(res => {
+    return this.http.post(`${this.baseUrl}${url}`, payload,   { headers: headers }).pipe(map(res => {
+      return res;
+    }));
+  }
+
+  postJsonRequest(url, payload) {
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    let token = this.auth.getToken();
+    if (token) {
+      headers = headers.append('Authorization', `Bearer ${token}`);
+    }
+    
+    return this.http.post(`${this.baseUrl}${url}`, payload,   { headers: headers }).pipe(map(res => {
       return res;
     }));
   }
