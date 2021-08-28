@@ -19,6 +19,7 @@
     </li>
     <li *ngIf="isCustomer" class="nav-item nav-fix">
       <a class="nav-link" [routerLink]="['/bookings']"><span>Bookings</span></a>
+    </li>
     <li *ngIf="isAdmin"class="nav-item nav-fix">
       <a class="nav-link" [routerLink]="['/add-trip']"><span>Add a trip*</span></a>
     </li>
@@ -33,18 +34,19 @@
       <a class="nav-link" ><span>Contact</span></a>
     </li> -->
 
-    <div id="right" style="display: flex; margin: 9px;">
+    <div id="right" style="display: flex;">
       <div>
-        <a style="color: white;" *ngIf="!isLogin" class="nav-link" [routerLink]="['login']" routerLinkActive="active">Login</a>
-        <a style="color: white;" *ngIf="isLogin" class="nav-link" [routerLink]="['login']" routerLinkActive="active">Profile</a>
+        <a style="color: white;" *ngIf="!isLogin" class="nav-link nav-fix" [routerLink]="['login']" routerLinkActive="active"><span>Login</span></a>
+        <a style="color: white;" *ngIf="isLogin" class="nav-link nav-fix" [routerLink]="['login']" routerLinkActive="active"><span>Profile</span></a>
       </div>
       <div>
-        <a style="color: white;" *ngIf="!isLogin" class="nav-link" [routerLink]="['signup']" routerLinkActive="active">Signup</a>
+        <a style="color: white;" *ngIf="!isLogin" class="nav-link nav-fix" [routerLink]="['signup']" routerLinkActive="active"><span>SignUp</span></a>
       </div>
     </div>
 
 
-    
+    <!-- Search Bar -->
+    <!-- <form class="form-inline" role="search" style="margin-top: 0px;"></form> -->
     <!-- <form class="form-inline" role="search" style="margin-top: 0px;">
 
       <div id="right">
