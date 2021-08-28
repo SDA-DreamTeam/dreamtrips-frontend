@@ -1,0 +1,24 @@
+.mrg {
+    margin: 10px;
+}
+
+.btn-custom {
+    background-color: rgb(139, 35, 35);
+    color: white;
+}
+
+h1,h2,h3,h4,h5,h6,a,p,link,span {
+    color: white;
+}
+
+.center-title{
+    text-align: center;
+    margin: 30px;
+    margin-top: 15px;
+}
+
+.mrg-button {
+    margin-left: 10px;
+    width: 387px;
+    
+}
