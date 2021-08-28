@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Trip } from 'src/app/model/trip.model';
-import { Injectable } from '@angular/core';
 import { TripServiceService } from 'src/app/trip-service.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -15,20 +13,38 @@ export class TripListComponent implements OnInit {
 
   trips: Trip[] = []
 
-  constructor(private router: Router, private tripService: TripServiceService) { }
+  constructor(
+    private router: Router,
+    private tripService: TripServiceService,
+    private route: ActivatedRoute
+  ) {
+
+  }
 
   ngOnInit(): void {
-    this.getSuggestionTrips();
+    this.findTrips();
   }
 
-  getSuggestionTrips() {
-    this.tripService.getSuggestionTrips().subscribe(data => {
-      this.trips = []
-      data.content.forEach( (element) => {
-        this.trips.push({id: element.id, fromAirport: element.fromAirport.name, departureDate: element.departureDate })
-      });
+  findTrips() {
+    this.route.queryParams
+      .subscribe(params => {
+        this.tripService.findTrips(params['fromCountry'], params['toCountry'], params['departureDate']).subscribe((res: any) => {
+          this.trips = []
+          res.content.forEach((element) => {
+            this.trips.push({ id: element.id, fromAirport: element.fromAirport.name, departureDate: element.departureDate })
+          });
+        }, err => {
+          console.log(err);
+        });
+      }); 
+  }
+
+  onTripSearch(data) {
+    this.router.navigate(['/trip-list'], {
+      relativeTo: this.route,
+      queryParams: data,
+      queryParamsHandling: 'merge'
     });
   }
-
 
 }

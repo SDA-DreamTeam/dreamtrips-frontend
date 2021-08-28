@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -14,6 +14,23 @@ export class TripServiceService {
 
   getSuggestionTrips(): Observable<any> {
     return this.http.get(`${this.url}`+"/suggestions");
+  }
+
+  findTrips(fromCountry, toCountry, departureDate): Observable<any> {
+    if (fromCountry == null) {
+      fromCountry=""
+    }
+    if (toCountry == null) {
+      toCountry=""
+    }
+    if (departureDate == null) {
+      departureDate=""
+    }
+    let params = new HttpParams()
+      .set("fromCountryId", fromCountry)
+      .set("toCountryId", toCountry)
+      .set("departureDate", departureDate);
+    return this.http.get(`${this.url}`, { params: params });
   }
 
   getTrip(id): Observable<any> {
