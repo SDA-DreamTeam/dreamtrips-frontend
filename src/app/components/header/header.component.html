@@ -19,7 +19,7 @@
     </li>
     <li *ngIf="isCustomer" class="nav-item nav-fix">
       <a class="nav-link" [routerLink]="['/bookings']"><span>Bookings</span></a>
-    <li class="nav-item nav-fix">
+    <li *ngIf="isAdmin"class="nav-item nav-fix">
       <a class="nav-link" [routerLink]="['/add-trip']"><span>Add a trip*</span></a>
     </li>
     <!-- Activated link -->
@@ -40,9 +40,6 @@
       </div>
     </div>
 
-
-    <!-- Search Bar -->
-    <form class="form-inline" role="search" style="margin-top: 0px;">
 
     
     <!-- <form class="form-inline" role="search" style="margin-top: 0px;">
