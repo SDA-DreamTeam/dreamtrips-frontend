@@ -1,13 +1,13 @@
-<div class='row m-0 w-100'>
-    <div class='col-md-4 offset-4 mt-5' *ngIf='!this.isLogin'>
-        <h4>Add new country</h4>
+<div class='row justify-content-center'>
+    <div class='col-md-4' *ngIf='!this.isLogin'>
+        <h4 class="mrg center-title">Add new country</h4>
         <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
-            <div class='form-group'>
-                <input class='form-control' type="text" name="countryName" placeholder="Country name" ngModel>
+            <div class='form-group mrg'>
+                <input class='form-control input-fix' type="text" name="countryName" placeholder="Country name" ngModel>
             </div>
             
            
-            <input class='btn btn-outline-info' type="submit" value="Add">
+            <input class='btn btn-custom mrg' type="submit" value="Add">
         </form>
     </div>
     
