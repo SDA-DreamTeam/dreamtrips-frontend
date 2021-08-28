@@ -19,6 +19,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { PurchaseFormComponent } from './components/purchase-form/purchase-form.component';
 import { AdvancedSearchComponent } from './components/advanced-search/advanced-search.component';
 import { AddCountryComponent } from './components/add-country/add-country.component';
+import { DatePipePipe } from './pipes/date-pipe.pipe';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AddCountryComponent } from './components/add-country/add-country.compon
     LoginComponent,
     SignupComponent,
     PurchaseFormComponent,
-    AddCountryComponent
+    AddCountryComponent,
+    DatePipePipe
   ],
   imports: [
     BrowserModule,

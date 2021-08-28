@@ -87,7 +87,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 column-fix">Departure Date:</div>
-                <div class="col-sm-8">{{trip.departureDate }}</div>
+                <div class="col-sm-8">{{trip.departureDate | date }} ({{trip.departureDate | datePipe }} until the trip)</div>
             </div>
             <div class="row">
                 <div class="col-sm-4 column-fix">Number of Days:</div>
@@ -119,8 +119,8 @@
             <!-- Edit trip Button -->
             <br>
             <div class="column-fix">
-                <button class="btn btn-custom" [routerLink]="['/edit-trip']">Edit trip*</button>
-                <button class="btn btn-delete button-fix" [routerLink]="['/delete-trip']">Delete trip*</button>
+                <button *ngIf="isAdmin" class="btn btn-custom" [routerLink]="['/edit-trip']">Edit trip*</button>
+                <button *ngIf="isAdmin" class="btn btn-delete button-fix" [routerLink]="['/delete-trip']">Delete trip*</button>
             </div>
             <br><br>
                 
