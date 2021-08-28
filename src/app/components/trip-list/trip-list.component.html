@@ -9,7 +9,34 @@
 
 <div class="row">
 
-    <div class="col-sm-4" style="height: 390px;">
+<div class="row">
+
+    <div *ngFor="let trip of trips" class="col-sm-4">
+        <div id="card" class="card dark-mode extra-border animate__animated animate__fadeIn">
+            <img class="card-img-top" src="https://picsum.photos/5{{this.trip.id}}" alt="Card image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">{{this.trip.fromAirport}}</h4>
+                <p class="card-text">{{this.trip.departureDate}}</p>
+                <a href="#" class="btn btn-custom btn-sm" [routerLink]="['/trip-details']" [queryParams]="{id:this.trip.id}">See Details</a>
+                <button class="btn btn-delete button-fix btn-sm btn-mrg" [routerLink]="['/delete-trip']">Delete trip*</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="centered">
+    <br><br><br><br>
+    <button class="btn btn-custom2">Load more</button>
+</div>
+
+
+
+
+
+
+
+
+
+    <!-- <div class="col-sm-4" style="height: 390px;">
 
         <div id="card" class="card dark-mode extra-border animate__animated animate__fadeIn">
             <img class="card-img-top" src="https://picsum.photos/500" alt="Card image" style="width:100%">
@@ -53,7 +80,7 @@
 <div class="centered">
     <br><br><br><br>
     <button class="btn btn-custom2">Load more</button>
-</div>
+</div> -->
 
 
 

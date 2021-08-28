@@ -13,10 +13,8 @@ import { Router } from '@angular/router';
 })
 export class TripListComponent implements OnInit {
 
-  trips: Trip[] = [
-  ]
+  trips: Trip[] = []
 
-  
   constructor(private router: Router, private tripService: TripServiceService) { }
 
   ngOnInit(): void {
@@ -31,5 +29,6 @@ export class TripListComponent implements OnInit {
       });
     });
   }
+
 
 }
