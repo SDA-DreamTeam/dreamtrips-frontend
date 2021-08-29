@@ -1,18 +1,32 @@
-<div class='row justify-content-center' style="text-align: center;">
-    <div class='col-md-4' *ngIf='!this.isLogin'>
+<div class='row justify-content-center centered' style="text-align: center;">
+    <div class='col-md-12' *ngIf='!this.isLogin'>
         <h3 class="mrg center-title">SignUp</h3>
+
         <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
             <div class='form-group mrg'>
-                <input class='form-control input-fix' type="text" name="username" placeholder="Username" ngModel>
+                <input class='form-control input-fix' type="text" name="username" placeholder="Username" ngModel required #username="ngModel">
+                <div *ngIf="username.dirty && username.invalid">
+                    <small class="err" *ngIf="username.errors['required']">Username is required</small>
+                </div>
             </div>
+
             <div class='form-group mrg'>
-                <input class='form-control input-fix' type="text" name="email" placeholder="Email" ngModel>
+                <input class='form-control input-fix' type="email" name="email" placeholder="Email" ngModel #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" email>
+                <div *ngIf="(email.invalid && email.touched) || email.dirty">
+                    <small *ngIf="email.errors?.required" class="err" style="text-align: left;">Email is required</small>
+                    <!--question mark(?) is a safe navigation operator-->
+                    <small *ngIf="email.errors?.pattern" class="err">Please provide a valid email address</small>
+                  </div>
             </div>
+
             <div class='form-group mrg'>
-                <input class='form-control input-fix' type="password" name="password" placeholder="Password" ngModel>
+                <input class='form-control input-fix' type="password" name="password" placeholder="Password" ngModel required #password="ngModel">
+                <div *ngIf="password.dirty && password.invalid">
+                    <small class="err" *ngIf="password.errors['required']">Password name is required</small>
+                </div>
             </div>
            
-            <input class='btn btn-custom mrg' type="submit" value="SignUp">
+            <input class='btn btn-custom mrg' [disabled]="myform.invalid" type="submit" value="SignUp">
         </form>
     </div>
     <div class='col-md-4' *ngIf='this.isLogin'>

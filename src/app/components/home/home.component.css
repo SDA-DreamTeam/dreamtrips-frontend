@@ -15,11 +15,11 @@ h1,h2,h3,h4,h5,h6,a,p,span {
   }
 
 .btn-custom {
-    background-color: rgba(139, 35, 35, 0.308);
+    background-color: rgba(201, 28, 28, 0.459);
     color: white;
 }
 
 button:hover {
-  transition-duration: 0.7s;
+  transition-duration: 0.3s;
   background-color: rgb(139, 35, 35);
 }

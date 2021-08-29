@@ -24,6 +24,14 @@ h1,h2,h3,h4,h5,h6,a,p,link,span {
 }
 
 .input-fix {
-    background-color: rgba(209, 209, 209, 0.596);
+    background-color: rgba(209, 209, 209, 0.801);
     border-width: 1.5px;
 }
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+  }

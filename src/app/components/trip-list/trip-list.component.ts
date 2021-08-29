@@ -21,9 +21,8 @@ export class TripListComponent implements OnInit {
   constructor(
     private router: Router,
     private tripService: TripServiceService,
-    private route: ActivatedRoute, 
-    private auth: AuthService)
-     {
+    private route: ActivatedRoute,
+    private auth: AuthService) {
     this.isLogin = this.isUserLogin();
     this.isCustomer = this.isUserCustomer();
     this.isAdmin = this.isUserAdmin();
@@ -88,7 +87,14 @@ export class TripListComponent implements OnInit {
         this.tripService.findTrips(params['fromCountry'], params['toCountry'], params['departureDate']).subscribe((res: any) => {
           this.trips = []
           res.content.forEach((element) => {
-            this.trips.push({ id: element.id, fromAirport: element.fromAirport.name, departureDate: element.departureDate })
+            this.trips.push({
+              id: element.id,
+              fromAirport: element.fromAirport.name,
+              toAirport: element.toAirport.name,
+              toCity: element.toAirport.city.name,
+              toCountry: element.toAirport.city.country.name,
+              departureDate: element.departureDate
+            })
           });
         }, err => {
           console.log(err);
