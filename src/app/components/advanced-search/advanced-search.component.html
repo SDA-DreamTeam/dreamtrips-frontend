@@ -72,14 +72,16 @@
                 <div class="form-group form-fix inline">
                     <label for="sel1">From country:</label>
                     <select class="form-control input-fix" id="fromCountry" name="fromCountry" ngModel>
-                        <option value="" disabled selected>Select a country</option>
+                        <option value="" selected hidden>Select a country</option>
+                        <option value="" >any</option>
                         <option *ngFor="let country of countries" value="{{country.id}}">{{country.name}}</option>
                     </select>
                 </div>
                 <div class="form-group form-fix inline">
                     <label for="sel1">To country:</label>
                     <select class="form-control input-fix" id="toCountry" name="toCountry" ngModel>
-                        <option value="" disabled selected>Select a country</option>
+                        <option value="" selected hidden>Select a country</option>
+                        <option value="" >any</option>
                         <option *ngFor="let country of countries" value="{{country.id}}">{{country.name}}</option>
                     </select>
                 </div>
