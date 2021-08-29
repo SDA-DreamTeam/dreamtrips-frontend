@@ -35,6 +35,8 @@ export class AdvancedSearchComponent implements OnInit {
     this.tripSearchEvent.emit(form.value);
   }
 
+   
+
   @Output() tripSearchEvent = new EventEmitter();
 
 }
