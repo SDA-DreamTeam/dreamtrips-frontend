@@ -78,22 +78,27 @@ export class PurchaseFormComponent implements OnInit {
 
   addCount2() {
     this.count2++;
+    this.countPrice();
   }
 
   subCount1() {
     if (this.count1 != 0) {
       this.count1--;
+      this.countPrice();
     }
+    
   }
 
   subCount2() {
     if (this.count2 != 0) {
       this.count2--;
+      this.countPrice();
     }
   }
 
   countPrice() {
-    this.price = this.trip.priceAdult;
+  this.price = this.trip.priceAdult * this.count1 + this.trip.priceChild * this.count2;
+    
   }
 
 
