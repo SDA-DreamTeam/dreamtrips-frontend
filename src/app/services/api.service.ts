@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -8,7 +9,9 @@ import { AuthService } from './auth.service';
 })
 export class ApiService {
 
-  baseUrl = 'http://localhost:8080/';
+
+  baseUrl = environment.apiUrl;
+
 
   constructor(private http: HttpClient, private auth: AuthService) {
   }
@@ -22,7 +25,7 @@ export class ApiService {
     }
 
     return this.http.get(
-        `${this.baseUrl}${url}`, { headers: headers }
+        `${this.baseUrl}/${url}`, { headers: headers }
       ).pipe(map(res => {
           return res;
         })
@@ -36,7 +39,7 @@ export class ApiService {
       headers = headers.append('Authorization', `Bearer ${token}`);
     }
     
-    return this.http.post(`${this.baseUrl}${url}`, payload,   { headers: headers }).pipe(map(res => {
+    return this.http.post(`${this.baseUrl}/${url}`, payload,   { headers: headers }).pipe(map(res => {
       return res;
     }));
   }
@@ -49,13 +52,13 @@ export class ApiService {
       headers = headers.append('Authorization', `Bearer ${token}`);
     }
     
-    return this.http.post(`${this.baseUrl}${url}`, payload,   { headers: headers }).pipe(map(res => {
+    return this.http.post(`${this.baseUrl}/${url}`, payload,   { headers: headers }).pipe(map(res => {
       return res;
     }));
   }
 
   putTypeRequest(url, payload) {
-    return this.http.put(`${this.baseUrl}${url}`, payload).pipe(map(res => {
+    return this.http.put(`${this.baseUrl}/${url}`, payload).pipe(map(res => {
       return res;
     }));
   }
